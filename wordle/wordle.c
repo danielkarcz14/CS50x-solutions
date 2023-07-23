@@ -4,7 +4,7 @@
 #include <string.h>
 #include <time.h>
 
-// I lost some hair coding on this project :)
+// I lost some hair on this project :)
 
 // each of our text files contains 1000 words
 #define LISTSIZE 1000
