@@ -4,7 +4,6 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-// First project where I had to dig for some more information on the internet to figure out only this formula c = (c - 97 + key) % 26 + 97; :( 
 
 bool only_digits(string s);
 char rotate(int key, char c);
