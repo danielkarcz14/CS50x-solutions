@@ -137,8 +137,6 @@ int check_word(string guess, int wordsize, int status[], string choice)
 {
     int score = 0;
     // TODO #5
-
-    // HINTS
     // iterate over each letter of the guess
     for (int i = 0; i < wordsize; i++)
     {
