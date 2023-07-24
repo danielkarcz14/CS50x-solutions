@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <string.h>
 
-// I have to say really enjoyed coding this project!! 
 
 const int BITS_IN_BYTE = 8;
 
