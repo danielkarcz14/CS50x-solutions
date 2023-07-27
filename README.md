@@ -24,7 +24,7 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 ### Week 3
 
 - [Practice Problems](week3/practiceproblems)
-- [Lab 3](week3/lab3)
+- [Lab 3](week3/lab3/)
 - [Problem Set 3](week3/pset3)
 - Currently working on Tideman
 
