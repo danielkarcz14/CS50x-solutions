@@ -1,5 +1,4 @@
 # CS50x-solutions
-https://cs50.harvard.edu/x/2023/
 
 Hello, these are my CS50x projets solutions so far. I am urrently at week3, working on Tidmean pset3.
 
