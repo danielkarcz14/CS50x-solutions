@@ -1,0 +1,24 @@
+sort1 uses: Bubble sort
+
+How do you know?: In lecture the bubble sort was the slowest when applied on randomly ordered numbers, and I got slowest result with sort 1 on everything so it has to be it
+
+sort2 uses: Merge sort
+
+How do you know?: It's the fastest
+
+sort3 uses: Selection sort
+
+How do you know?: The only option reamining
+
+
+MY RESULTS
+
+        Random5000  Random10000  Random50000  Reversed5000  Reversed10000  Reversed50000
+
+Sort 1      0.063       0.307       10.718        0.102         0 .241          6.184
+
+
+Sort 2      0.02        0.048       1.179         0.046         0.083           1.292
+
+
+Sort 3      0.054       0.168       4.31          0.061         0.177           4.7
