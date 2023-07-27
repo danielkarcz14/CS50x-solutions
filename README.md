@@ -32,7 +32,7 @@ Feel free to inspirate. As I am still learning some of the projects are really h
 
 ## Future Plans
 
-- Optimize solutions for previous projects
+- Optimize solutions for previous projects (I might as well leave the first solutions, so you can see what should you expect to be able to do after nth Lecture, but idk now)
 - Sharing my other projects from my coding journey
 
 ## Contributions
