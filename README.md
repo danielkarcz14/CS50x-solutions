@@ -1,6 +1,6 @@
 # CS50x-solutions
 
-Hello, these are my CS50x projets solutions so far. I am urrently at week3, working on Tidmean pset3.
+Hello, these are my CS50x projets solutions so far. I am currently at week3, working on Tidmean pset3.
 
 I didn't include week0 since it is only scratch.
 
