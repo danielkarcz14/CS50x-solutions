@@ -4,7 +4,7 @@ Hello, these are my CS50x projets solutions so far. I am currently at week3, wor
 
 I didn't include week0 since it is only scratch.
 
-Feel free to inspirate. As I am still learning some of the projects are really hard coded, but they all work!
+If you are taking CS50x feel free to inspirate with my solutions. As I am still learning some of the projects are really hard coded, but they all work!
 
 ## Projects by Week
 
