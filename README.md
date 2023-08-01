@@ -1,7 +1,6 @@
 # CS50x-solutions
 
 Hello, these are my CS50x projets solutions so far. I started on 14.7.2023 with 0 to very little previous coding experience. 
-I am currently at week3, working on Tidmean pset3.
 
 I didn't include week0 since it is only scratch.
 
@@ -26,7 +25,7 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 - [Practice Problems](week3/practiceproblems)
 - [Lab 3](week3/lab3/)
 - [Problem Set 3](week3/pset3)
-- Currently working on Tideman
+- I've decied to skip Tideman for now since I couldnt figure out the locked_pair function in 6 days for now. I will come back to it later perhaps.
 
 [More Weeks...]
 
