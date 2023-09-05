@@ -27,6 +27,12 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 - [Problem Set 3](week3/pset3)
 - I've decied to skip Tideman for now since I couldnt figure out the locked_pair function in 6 days for now. I will come back to it later perhaps.
 
+### Week 4
+
+- [Practice Problems](week4/practiceproblems)
+- [Lab 4](week4/lab4)
+- [Problem Set 4](week4/pset4)
+
 [More Weeks...]
 
 ## Future Plans
