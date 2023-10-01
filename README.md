@@ -33,6 +33,12 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 - [Lab 4](week4/lab4)
 - [Problem Set 4](week4/pset4)
 
+### Week 5
+
+- [Practice Problems](week5/practiceproblem)
+- [Lab 5](week5/lab5)
+- [Problem Set 5](week5/pset5)
+
 [More Weeks...]
 
 ## Future Plans
