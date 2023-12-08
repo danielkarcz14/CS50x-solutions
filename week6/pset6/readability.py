@@ -3,9 +3,9 @@ import re
 
 def main():
     text = input("Text: ")
-    letters = len(count_letters(text))
-    words = len(count_words(text)) + 1
-    sentences = len(count_sentences(text))
+    letters = len(extract_letters(text))
+    words = len(extract_words(text)) + 1
+    sentences = len(extract_sentences(text))
     # print grade
     print(colemanliau_index(letters, words, sentences))
 
@@ -22,15 +22,15 @@ def colemanliau_index(letters, words, sentences):
         return f"Grade {round(index)}"
 
 
-def count_letters(text):
+def extract_letters(text):
     return re.findall("[a-zA-Z]", text)
 
 
-def count_words(text):
+def extract_words(text):
     return re.findall(r"\s", text)
 
 
-def count_sentences(text):
+def extract_sentences(text):
     return re.findall(r"[.!?]", text)
 
 
