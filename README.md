@@ -40,10 +40,10 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 - [Problem Set 5](week5/pset5)
 
 ### Week 6
-
+! I found it hard to adapt that quickly from C to python so I did CS50P, which was very easy, but gave me good understanding of fundamentals in python.
 - [Practice Problems](week6/practiceproblems)
-- [Lab 5](week6/lab6)
-- [Problem Set 5](week6/pset6)
+- [Lab 6](week6/lab6)
+- [Problem Set 6](week6/pset6)
 
 [More Weeks...]
 
