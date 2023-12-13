@@ -40,7 +40,7 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 - [Problem Set 5](week5/pset5)
 
 ### Week 6
-! I found it hard to adapt that quickly from C to python so I did CS50P, which was very easy, but gave me good understanding of fundamentals in python.
+! I found it hard to adapt that quickly from C to python so I did CS50P, which was very easy, but gave me good understanding of fundamentals in python. This is my [CS50P final project](week6/cs50p/final_project)
 - [Practice Problems](week6/practiceproblems)
 - [Lab 6](week6/lab6)
 - [Problem Set 6](week6/pset6)
