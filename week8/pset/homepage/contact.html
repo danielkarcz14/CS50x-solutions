@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>About me</title>
+    </head>
+    <body>
+        <div class="header-container">
+            <div class="header-item logo">
+                <a href="/index.html">CS50<span style="color: red;">x</span> Homepage</a>
+            </div>
+            <div class="header-item navbar">
+                <ul class="nav">
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/about.html">About Me</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                  </ul>
+                  <button class="contact-button" onclick="window.location.href='contact.html'">
+                    CONTACT
+                  </button>
+              </div>
+          </div>
+          <main>
+            <div class="head-wrapper">
+                <div class="head">
+                    <h4 style="text-align: center;">CONTACT</h4>
+                    <h1>Get In Touch</h1>
+                </div>
+            </div>
+            <div class="contact-container">
+                <div class="contact-item card">
+                    <div class="card-image"  style="background-image: url('/images/duck.png');">
+                    </div>
+                    <div class="card-head">
+                        <h2>Daniel Karcz</h2>
+                    </div>
+                    <div>
+                        <p>I am avaliable for freelance work.</p>
+                    </div>
+                    <div class="card-email-phone">
+                        <ul>
+                            <li class="email">danielkarcz14@gmail.com</li>
+                            <li>+420 732 846 337</li>
+                        </ul>
+                    </div>
+                    <div class="card-socials">
+                        <h4>FIND ME HERE</h4>
+                        <ul>
+                            <li><img src="/images/facebook-f.svg" alt=""></li>
+                            <li><img src="/images/instagram.svg" alt=""></li>
+                            <li><img src="/images/github.svg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="contact-item form">
+                    <form>
+                        <div class="row">
+                            <div class="col-name">
+                                <label>NAME</label>
+                                <input class="name" type="text">
+                            </div>
+                            <div class="col-sur">
+                                <label>SURNAME</label>
+                                <input class="surname" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-100">
+                                <label>EMAIL</label>
+                                <input class="email" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-100">
+                                <label>YOUR MESSAGE</label>
+                                <textarea cols="30" rows="10"></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input type="submit" value="SEND MESSAGE">
+                          </div>
+                    </form>
+                </div>
+            </div>
+          </main>
+    </body>
+</html>
