@@ -59,7 +59,7 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 
 - [Problem Set 9](week9/pset)
 
-[More Weeks...]
+[Final Project...]
 
 ## Future Plans
 
