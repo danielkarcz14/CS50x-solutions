@@ -55,6 +55,7 @@ def index():
         return render_template("index.html", birthdays=birthdays)
 
 
+# my own additions of delete and edit
 
 @app.route("/delete", methods=["POST"])
 def delete():
