@@ -72,7 +72,7 @@ def edit():
         name = db.execute("SELECT name FROM birthdays WHERE id = ?", id)[0]['name']
         month = db.execute("SELECT month FROM birthdays WHERE id = ?", id)[0]['month']
         day = db.execute("SELECT day FROM birthdays WHERE id = ?", id)[0]['day']
-        return render_template("form.html", id=id, name=name, month=month, day=day)
+        return render_template("edit.html", id=id, name=name, month=month, day=day)
 
 
 @app.route("/edited", methods=["POST"])
