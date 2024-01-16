@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+
+{% block body %}
+        <h2>Edit birthday for {{ name }}</h2>
+        <form action="/edited" method="post">
+            <input type="hidden" name="id" value="{{ id }}">
+            <input type="text" name="name" value="{{ name }}">
+            <input type="text" name="month" value="{{ month}}" min="1" max="12">
+            <input type="text" name="day" value="{{ day }}" min="1" max="31">
+            <button type="submit">Edit</button>
+        </form>
+        {% block add_birthday %}{% endblock %}
+{% endblock %}
