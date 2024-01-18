@@ -1,4 +1,4 @@
-# not finished yet two cs50 checks missing
+# Not finished yet two cs50 checks missing
 # I will also publish version with sqlalchemy instead of cs50sql library
 
 
