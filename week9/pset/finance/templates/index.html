@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Symbol</th>
+        <th scope="col">Shares Amount</th>
+        <th scope="col">Share Price</th>
+        <th scope="col">TOTAL</th>
+      </tr>
+    </thead>
+    {% for share in shares %}
+    <tbody>
+      <tr>
+        <th scope="row">{{ share.symbol }}</th>
+        <td>{{ share.quantity }}</td>
+        <td>{{ share.share_price | usd }}</td>
+        <td>{{ share.total_price | usd }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <th scope="row">Balance</th>
+        <td colspan="4">{{ balance | usd}}</td>
+      </tr>
+      <tr>
+        <th scope="row">TOTAL</th>
+        <td colspan="4">{{ total_value | usd }}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}
