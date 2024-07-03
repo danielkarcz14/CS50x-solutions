@@ -58,8 +58,9 @@ If you are taking CS50x feel free to inspirate with my solutions. As I am still 
 ### Week 9
 
 - [Problem Set 9](week9/pset)
-
-- [Final Project](/finalproject)
+- 
+### Final Project
+- [Savings.io](/finalproject)
 
 ## Future Plans
 
