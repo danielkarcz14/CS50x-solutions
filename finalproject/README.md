@@ -1,6 +1,5 @@
 # SAVINGS.IO
-#### Video Demo:  <URL HERE>
-#### Description:
+#### Video Demo:  https://www.youtube.com/watch?v=_hs2Tgwi8hg
 
 ## Project Description
 Savings.io is a web application designed to help users calculate and visualize the potential growth of their savings over time. User can edit monthly saved value (max 400€), time of savings (max 25 years), extra deposit (max 20000€), interest rate (max 15%) and lastly name their plan accordingly. The web application then allows users to save their plans, view them together in a table, and edit them as needed.
