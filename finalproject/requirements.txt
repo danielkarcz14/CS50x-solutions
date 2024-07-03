@@ -1,0 +1,6 @@
+pip install flask
+pip install sqlite3
+npm install -D tailwindcss
+npx tailwindcss init
+pip install newsapi-python
+pip install requests

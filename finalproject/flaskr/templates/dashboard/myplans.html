@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="flex flex-wrap mt-20 w-full max-w-screen-xl justify-center mx-auto px-4 pt-20 h-screen" style="max-width: 1000px;">
+    <div class="overflow-x-auto w-full">
+        <p id="waitMessage" style="display:none">Please kindly wait your pdf is being generated...</p>
+        <h2 class="mb-10 text-2xl text-center font-bold leading-9 tracking-tight text-gray-900">My Created Plans</h2>
+        {% for message in get_flashed_messages() %}
+        <a class="font-semibold text-red-600">{{ message }}</a>
+        {% endfor %}
+        <table class="w-full text-sm text-left rtl:text-right text-gray-900 dark:text-gray-900 rounded-xl overflow-hidden">
+            <thead class="text-xs text-black uppercase bg-gray-50 dark:bg-lime-100 dark:text-black">
+                <tr>
+                    <th scope="col" class="px-6 py-3">
+                        Plan's Name
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Total Saved
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Monthly Amount
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Created On
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        Action
+                    </th>
+                </tr>
+            </thead>
+            <form id="my_plans" action="/myplans" method="POST">
+            <tbody class="plans">
+                {% for plan in plans %}
+                <tr class="odd:dark:bg-lime-300 even:dark:bg-lime-200 border-b dark:border-gray-200">
+                    <td class="px-6 py-4">
+                        {{ dict(plan)['plans_name'] }}
+                        <input class="data" type="hidden" name="plan_name" value="{{ dict(plan)['plans_name'] }}">
+                    </td>
+
+                    <td class="px-6 py-4">
+                        {{ dict(plan)['total_amount'] | eur }}
+                        <input class="data" type="hidden" name="total_amount" value="{{ dict(plan)['total_amount'] }}">
+                    </td>
+
+                    <td class="px-6 py-4">
+                        {{ dict(plan)['monthly_amount'] | eur }}
+                        <input class="data" type="hidden" name="monthly_amount" value="{{ dict(plan)['monthly_amount'] }}">
+
+                    </td>
+              
+                    <td class="px-6 py-4">
+                        {{ dict(plan)['created_at'] }}
+                        <input class="data" type="hidden" name="created_at" value="{{ dict(plan)['created_at'] }}">
+                    </td>
+                    
+                    <input class="data" type="hidden" name="extra_deposit" value="{{ dict(plan)['extra_deposit'] }}">
+                    <input class="data" type="hidden" name="time_of_saving" value="{{ dict(plan)['time_of_saving'] }}">
+                    <input class="data" type="hidden" name="interest_rate" value="{{ dict(plan)['interest_rate'] }}">
+
+                    <td class="px-6 py-4">           
+                      <input class="data" type="hidden" name="action" value="download">
+                      <a class="edit font-medium text-red cursor-pointer hover:underline">Edit </a>
+                      <span>  |</span>
+        
+                        <button id="download" onclick="" type="button" name="action" value="download" class="download font-medium text-red cursor-pointer hover:underline">
+                          Download
+                      </button>   
+            
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+          </form>
+        </table>
+    </div>
+</div>
+
+{% for plan in plans %}
+<div class="edit-popup relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" style="display: none;">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  
+    <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+      <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+        <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+          <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
+                <h3 class="text-center font-semibold leading-6 text-gray-900 text-xl" id="modal-title">Edit Saving Plan</h3>
+                <div class="mt-0 justify-center mx-auto">
+                    <form id="popup-form" action="/myplans" method="POST" class="flex flex-wrap flex-row w-full max-w-screen-xl justify-center mx-auto px-4" style="max-width: 800px;">
+                      <input name="plan-id" type="text" hidden value="{{ dict(plan)['id'] }}">  
+                      <div class="w-full  flex flex-col justify-center mx-auto px-6 pb-6 bg-white ">
+                          <label for="default-range" class="mb-1 mt-4 text-base font-medium text-gray-900 dark:text-black">Change Plan's Name</label>
+                          <input required name="plan-name" id="plan-name" value="{{ dict(plan)['plans_name'] }}" class="mb-2 block rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                          <div class="text-sm ">
+                            {% for message in get_flashed_messages() %}
+                            <a class="font-semibold text-red-600">{{ message }}</a>
+                            {% endfor %}
+                          </div>
+
+                          <label for="default-range" class="mb-1 text-base font-medium text-gray-900 dark:text-black">Change Monthly Amount</label>
+                          <div class="value mb-4"><span class="text-base rounded-xl bg-lime-200 p-2">{{ dict(plan)['monthly_amount'] }} €</span></div>
+                          <input id="slider-eur-month" name="slider-eur-month" type="range" min="0" max="400"value="{{ dict(plan)['monthly_amount'] }}" step="1" class="slider mb-2" style="line-height: 24px;">
+                          <div class="flex justify-between mb-2"><span class="text-base">0 €</span><span class="text-base">400 €</span></div>
+                      
+                          <label for="default-range" class="mb-1 block text-base font-medium text-gray-900 dark:text-black">Change Time Of Saving</label>
+                          <div class="value mb-4"><span class="text-base rounded-xl bg-lime-200 p-2">{{ dict(plan)['time_of_saving'] }} years</span></div>
+                          <input id="slider-time" name="slider-time" type="range" min="1" max="25"value="{{ dict(plan)['time_of_saving'] }}" step="1" class="slider mb-2">
+                          <div class="flex justify-between mb-2"><span class="text-base">1 year</span><span class="text-base">25 years</span></div>
+                      
+                          <label for="default-range" class="mb-1 block text-base font-medium text-gray-900 dark:text-black">Change extra deposit</label>
+                          <div class="value mb-4"><span class="text-base rounded-xl bg-lime-200 p-2">{{ dict(plan)['extra_deposit'] }} €</span></div>
+                          <input id="slider-eur-deposit" name="slider-eur-deposit" type="range" min="0" max="20000"value="{{ dict(plan)['extra_deposit'] }}" step="40" class="slider mb-2">
+                          <div class="flex justify-between "><span class="text-base">0 €</span><span class="text-base">20000 €</span></div>
+                          
+                          <label for="default-range" class="mb-2 block text-base font-medium text-gray-900 dark:text-black">Annual return</label>
+                          <div class="value mb-4"><span class="text-base rounded-xl bg-lime-200 p-2">{{ dict(plan)['interest_rate'] }} %</span></div>
+                          <input id="slider-percentage-interest" name="slider-percentage-interest" type="range" min="0.1" max="15"value="{{ dict(plan)['interest_rate'] }}" step="0.1" class="slider mb-2">
+                          <div class="flex justify-between mb-7"><span class="text-base">0.1 %</span><span class="text-base">15 %</span></div>
+
+                        </div>
+                        
+                        <div class="w-full flex flex-col justify-start p-2 bg-lime-100 rounded-xl">
+                            <h2 class="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Updated Total Savings</h2>
+                            <div class="result flex flex-col justify-center h-20 "><input readonly value="{{ dict(plan)['total_amount'] }} €" type="text" id="result-value" name="result-value" class="bg-lime-100 font-josefin-sans text-3xl text-center ring-0 focus:outline-none"></div>               
+                        </div>             
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+            <button type="submit"  name="action" value="change" class="close save mt-3 inline-flex w-full justify-center rounded-md bg-lime-400 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-lime-500 sm:ml-3 sm:mt-0  sm:w-auto">Save Changes</button>
+            <button type="submit"  name="action" value="delete" class="close delete mt-3 inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:mt-0  sm:w-auto">Delete Plan</button>
+            <button type="button"  name="action" value="cancel" class="close cancel mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto">Cancel</button>
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %} 
+
+{% endblock %}

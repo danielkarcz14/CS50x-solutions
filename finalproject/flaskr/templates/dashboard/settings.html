@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ {% for user in users %}
+ <form method="GET" class="mt-10 pl-4 pr-4 flex flex-col w-full md:w-3/4 mx-auto" style="max-width: 800px; height: 100vh;">
+    <h2 class="text-left text-2xl font-bold leading-9 tracking-tight text-gray-900">Profile Settings</h2>
+    <div class="flex flex-col md:flex-row flex-wrap mt-4">
+        <div class="w-full md:w-1/2 flex flex-col justify-start p-2 bg-white">
+            <label for="firstname" class="mb-2 text-base font-medium text-gray-900 dark:text-black">First Name</label>
+            <input required name="firstname" id="firstname" value="{{ dict(user)['name'] }}" placeholder="Enter First Name" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message firstname"></p>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col justify-start p-2 bg-white">
+            <label for="lastname" class="mb-2 text-base font-medium text-gray-900 dark:text-black">Last Name</label>
+            <input required name="lastname" id="lastname" value="{{ dict(user)['surname'] }}" placeholder="Enter Last Name" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message lastname"></p>
+        </div>
+    </div>  
+    <div class="flex flex-col">
+        <div class="w-full flex flex-col justify-start p-2 bg-white">
+            <label for="email" class="mb-2 text-base font-medium text-gray-900 dark:text-black">E-mail Address</label>
+            <input required name="email" id="email" value="{{ dict(user)['email'] }}" placeholder="Enter E-mail Address" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message email"></p>
+        </div>   
+        <div class="w-full flex flex-col justify-start p-2 bg-white">
+            <label for="username" class="mb-2 text-base font-medium text-gray-900 dark:text-black">Username</label>
+            <input required name="username" id="username" value="{{ dict(user)['username'] }}" placeholder="Enter Username" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message username"></p>
+        </div>    
+    </div>  
+    <div class="flex flex-col md:flex-row flex-wrap">
+        <div class="w-full md:w-1/2 flex flex-col justify-start p-2 bg-white">
+            <label for="oldpassword" class="mb-2 text-base font-medium text-gray-900 dark:text-black">Old Password</label>
+            <input type="password" name="oldpassword" id="oldpassword" placeholder="Enter Old Password" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message password"></p>
+        </div>
+        <div class="w-full md:w-1/2 flex flex-col justify-start p-2 bg-white">
+            <label for="newpassword" class="mb-2 text-base font-medium text-gray-900 dark:text-black">New Password</label>
+            <input name="newpassword" type="password" id="newpassword" placeholder="Enter New Password" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message new_password"></p>
+        </div>           
+    </div> 
+    <div class="flex flex-col">
+        <div class="w-full flex flex-col justify-start p-2 bg-white">
+            <label for="newpasswordcheck" class="mb-2 text-base font-medium text-gray-900 dark:text-black">Confirm New Password</label>
+            <input name="newpasswordcheck" type="password" id="newpasswordcheck" placeholder="Repeat New Password" class="set block w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+            <p class="message new_password_check"></p>
+        </div>     
+    </div>
+    <div class="p-2 sm:flex sm:flex-row-reverse justify-between">
+        <button type="button" name="action" value="change" class="change save mt-3 inline-flex w-full rounded-md bg-lime-400 px-3 py-2 text-sm font-semibold text-black shadow-sm hover:bg-lime-500 sm:ml-3 sm:mt-0 sm:w-auto">Save Changes</button>
+        <p class="message success"></p>
+    </div> 
+</form>
+
+  {% endfor %} 
+{% endblock %}

@@ -1,0 +1,46 @@
+input[type="range"]  {
+    -webkit-appearance: none;
+    height: 8px;
+    background-color: #fef08a;
+    border-radius: 20px;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    background-color: #a3e635;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover{
+    background-color: #a3e635; /* Inner circle color */
+    box-shadow:
+    0 0 0 4px #fff,
+    0 0 0 7px #a3e635;
+    transition: box-shadow 200ms ease-in-out;
+}
+
+.edit-popup{
+    animation-duration: 0.5s;
+    animation-name: fade-in;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+p.message {
+    font-size: 14px;
+    color: red;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-top: 2px;
+}
+
+p.message.success {
+    color: green;
+}
