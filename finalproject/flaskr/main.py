@@ -10,7 +10,7 @@ import random
 email_validate_pattern = r"^\S+@\S+\.\S+$"
 password_pattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
 
-news_api_key = "a150248d0ced4e9f81ed244ef823ce24"
+news_api_key = ""
 
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, url_for, jsonify, send_file
